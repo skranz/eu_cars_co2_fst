@@ -35,7 +35,7 @@ download.and.convert = function(year, url) {
   
   dat = try(rio::import(csv.file))
   
-  # Some files use UTF-16 encoding. Use good old read.csv to deal with it
+  # Some files are UTF-16 encoded. Use good old read.csv to deal with it
   if (is(dat, "try-error")) {
     dat = read.csv(csv.file,fileEncoding = "UTF-16", sep="\t")
   }
